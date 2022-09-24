@@ -9,6 +9,7 @@ app.get("/", (req, res) => {
     res.sendFile(path.resolve("public/clock.html"));
 });
 
-app.listen(8080, (error) => {
-    console.log("Server is running on port", 8080);
+const port = process.env.NETLIFY ? 80 : 8080; // use port 80 on netlify
+app.listen(port, (error) => {
+    console.log("Server is running on port", port);
 });
