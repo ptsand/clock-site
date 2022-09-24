@@ -1,0 +1,92 @@
+:root {
+    --light-gray: #C3CBD6;
+    --dark-green: #2A403D;
+    --light-green: #748B6F;
+    --red: #D05663;
+}
+
+html {
+    background-color: var(--light-gray);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    height: 100vh;
+    width: 95%;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        width: 50%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 40%;
+    }
+}
+
+.clock {
+    position: relative;
+    aspect-ratio: 1/1;
+    width: 100%;
+    border: 0.5rem solid var(--light-green);
+    border-radius: 100%;
+    background-color: var(--dark-green);
+}
+
+.inner-clock {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    border-radius: 100%;
+    background-color: var(--dark-green);
+    z-index: 2;
+}
+
+.second-hand, .minute-hand, .hour-hand {
+    background-color: var(--light-green);
+    position: absolute;
+    transform-origin: bottom;
+    border-radius: 0.2rem;
+    z-index: 2;
+}
+
+.second-hand {
+    top: 5%;
+    left: 49.75%;
+    background-color: var(--red);
+    width: 0.5%;
+    height: 45%;
+}
+
+.minute-hand {
+    top: 10%;
+    left: 49.5%;
+    width: 1%;
+    height: 40%;
+}
+
+.hour-hand {
+    top: 20%;
+    left: 49%;
+    width: 2%;
+    height: 30%;
+}
+
+.no-transition {
+    transition: none !important;
+}
+
+.marker {
+    position: absolute;
+    top: 49.5%;
+    width: 94%;
+    left: 3%;
+    height: 1%;
+    background-color: var(--light-green);
+}
